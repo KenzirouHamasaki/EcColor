@@ -37,7 +37,7 @@
               @if(!empty($data) && $data->count())
                   @foreach($data as $key => $value)
                       <tr>
-                        <a href="#" class="col-lg-4 col-md-6">
+                        <a href="{{ route('product.show', $value->id) }}" class="col-lg-4 col-md-6">
                           <div class="card">
                               <img src="{{ asset($value->image) }}" class="card-img"/>
                               <div class="card-body">
@@ -45,7 +45,7 @@
                                   <p class="card-text">¥{{ number_format($value->price) }}</p>
                               </div>
                           </div>
-                      </a>
+                        </a>
                           
                       </tr>
                   @endforeach

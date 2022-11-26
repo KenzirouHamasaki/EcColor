@@ -15,4 +15,10 @@ class ProductController extends Controller
         return view('product.index', compact('data'))
             ->with('products', Product::get());
     }
+
+    public function show($id)
+    {
+        return view('product.show')
+            ->with('product', Product::find($id));
+    }
 }
