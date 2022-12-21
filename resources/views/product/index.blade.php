@@ -1,11 +1,11 @@
 <!doctype html>
 
 @extends('layouts.app')
- 
+
 @section('title')
 商品一覧
 @endsection
- 
+
 @section('content')
 
   <div class="jumbotron top-img">
