@@ -31,3 +31,4 @@
     <a href="{{ route('product.index') }}">TOPへ戻る<a>
 </div>
 @endsection
+
