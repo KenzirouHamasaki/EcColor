@@ -9,7 +9,7 @@
 @section('content')
 
   <div class="jumbotron top-img">
-    <p class="text-center text-primary top-img-text">{{ config('app.name', 'Laravel')}}</p>
+    <p id="title" class="text-center text-black top-img-text">{{ config('app.name', 'Laravel')}}</p>
   </div>
 
   <div class="back-ground">

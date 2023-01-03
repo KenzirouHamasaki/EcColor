@@ -12,20 +12,24 @@ body {
   flex: 1;
 }
 
+#title {
+  font-size: 50px;
+}
+
 .top {
   &-img {
-    background-image: url("../../public/images/top.jpeg");
+    background-image: url("../../public/images/toptop.jpeg");
     background-size: cover;
     height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
 
-    &-text {
-      font-size: 28px;
-      font-weight: bold;
-      letter-spacing: 3px;
-    }
+  &-text {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 3px;
   }
 
   &__title {
@@ -35,6 +39,7 @@ body {
     padding: 20px 0 40px;
   }
 }
+
 
 .card {
   &-product-name {
