@@ -8,12 +8,14 @@ body {
   flex-direction: column;
 }
 
+
 .container {
   flex: 1;
 }
 
 #title {
   font-size: 50px;
+  color: #FFF;
 }
 
 .top {
@@ -184,6 +186,8 @@ a:active {
 .back-ground {
   background-image: url("../../public/images/backgroundcolor.jpg");
 }
+
+
 
 //footerTemplate//
 
