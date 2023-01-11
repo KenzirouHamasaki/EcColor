@@ -10974,6 +10974,7 @@ a:active {
 
 .back-ground {
   background-image: url(/images/backgroundcolor.jpg?6e83c016dfe107b0076870446f282df4);
+  height: 100%;
 }
 
 .search-text {

@@ -20,3 +20,8 @@ Route::name('cart.')
     Route::get('/cart/checkout', 'CartController@checkout')->name('checkout');
     Route::get('/cart/success', 'CartController@success')->name('success');
   });
+
+Route::name('thanx.')
+  ->group(function () {
+    Route::get('/thanx', 'ThanxController@index')->name('index');
+  });
