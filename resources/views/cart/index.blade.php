@@ -44,6 +44,7 @@
         <button onClick="location.href='{{ route('cart.checkout') }}'" class="cart__purchase btn btn-primary">
             購入する
         </button>
+        <button onClick="history.back()">戻る</button>
         @else
         <div class="cart__empty">
             カートに商品が入っていません。
