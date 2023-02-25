@@ -20,13 +20,6 @@
       </div>
     </div>
 
-{{--検索フォーム--}}
-   {{-- <div class="input-group">
-        <form id="formbox" action="{{ route('product.index') }}" method="GET" value="@if (isset($search)) {{ $search }} @endif">
-            <input type="text" class="form-control" placeholder="キーワードを入力">
-            <button class="btn btn-outline-success" type="button" id="button-addon2"><i class="fas fa-search"></i> 検索</button>
-        </form>
-    </div>  --}}
 
     <form method="GET" action="{{ route('product.index') }}">
         <input type="search" placeholder="商品名を入力" name="search" value="@if (isset($search)) {{ $search }} @endif">
@@ -40,15 +33,6 @@
         </div>
     </form>
 
-    @foreach($products as $product)
-        <a href="{{ route('product.show', ['id' => $product->id]) }}">
-        </a>
-    @endforeach
-
-
-
-
-{{--
     <div class="container">
       <br>
       <br>
@@ -56,15 +40,15 @@
       <div class="row">
 
           <tbody>
-              @if(!empty($data) && $data->count())
-                  @foreach($data as $key => $value)
+              @if(!empty($products) && $products->count())
+                  @foreach($products as $key => $value)
                       <tr>
                         <a href="{{ route('product.show', $value->id) }}" class="col-lg-4 col-md-6">
                           <div class="card">
                               <img src="{{ asset($value->image) }}" class="card-img"/>
                               <div class="card-body">
                                   <p class="card-title">{{ $value->name }}</p>
-                                  <p class="card-text">¥{{ number_format($value->price) }}</p>
+                                  <p class="card-text">{{ number_format($value->price) }}</p>
                               </div>
                           </div>
                         </a>
@@ -79,9 +63,8 @@
           </tbody>
       </table>
             
-      {!! $data->links() !!}
+      {{ $products->appends(request()->input())->links() }}
     </div>
-    --}}
     
 {{--
     <div class="container">

@@ -11,7 +11,7 @@ class ProductController extends Controller
 {
     public function index(Request $request)
     {
-        $products = Product::paginate(6);
+        $products = Product::paginate(2);
 
         $search = $request->input('search');
 
@@ -26,7 +26,7 @@ class ProductController extends Controller
                 $query->where('name', 'like', '%' . $value . '%');
             }
 
-            $products = $query->paginate(6);
+            $products = $query->paginate(2);
         }
 
         return view('product.index')
@@ -35,6 +35,7 @@ class ProductController extends Controller
                 'search' => $search
             ]);
     }
+
 
     public function show($id)
     {
