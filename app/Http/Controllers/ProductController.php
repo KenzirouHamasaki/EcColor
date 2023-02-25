@@ -9,11 +9,31 @@ use Illuminate\Pagination\Paginator;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $data = Product::paginate(6);
-        return view('product.index', compact('data'))
-            ->with('products', Product::get());
+        $products = Product::paginate(6);
+
+        $search = $request->input('search');
+
+        $query = Product::query();
+
+        if ($search) {
+            $spaceConversion = mb_convert_kana($search, 's');
+
+            $wordArraySearched = preg_split('/[\s,]+/', $spaceConversion, -1, PREG_SPLIT_NO_EMPTY);
+
+            foreach ($wordArraySearched as $value) {
+                $query->where('name', 'like', '%' . $value . '%');
+            }
+
+            $products = $query->paginate(6);
+        }
+
+        return view('product.index')
+            ->with([
+                'products' => $products,
+                'search' => $search
+            ]);
     }
 
     public function show($id)

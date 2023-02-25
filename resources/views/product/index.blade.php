@@ -20,13 +20,35 @@
       </div>
     </div>
 
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="キーワードを入力">
-      <button class="btn btn-outline-success" type="button" id="button-addon2"><i class="fas fa-search"></i> 検索</button>
-    </div>
+{{--検索フォーム--}}
+   {{-- <div class="input-group">
+        <form id="formbox" action="{{ route('product.index') }}" method="GET" value="@if (isset($search)) {{ $search }} @endif">
+            <input type="text" class="form-control" placeholder="キーワードを入力">
+            <button class="btn btn-outline-success" type="button" id="button-addon2"><i class="fas fa-search"></i> 検索</button>
+        </form>
+    </div>  --}}
+
+    <form method="GET" action="{{ route('product.index') }}">
+        <input type="search" placeholder="商品名を入力" name="search" value="@if (isset($search)) {{ $search }} @endif">
+        <div>
+            <button type="submit">検索</button>
+            <button>
+                <a href="{{ route('product.index') }}" class="text-black">
+                    リセットさん
+                </a>
+            </button>
+        </div>
+    </form>
+
+    @foreach($products as $product)
+        <a href="{{ route('product.show', ['id' => $product->id]) }}">
+        </a>
+    @endforeach
 
 
 
+
+{{--
     <div class="container">
       <br>
       <br>
@@ -59,6 +81,7 @@
             
       {!! $data->links() !!}
     </div>
+    --}}
     
 {{--
     <div class="container">

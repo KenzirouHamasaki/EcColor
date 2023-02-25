@@ -10977,6 +10977,14 @@ a:active {
   height: 100%;
 }
 
+.input-group {
+  display: inline-block;
+}
+
+.form-control {
+  display: inline-block;
+}
+
 .search-text {
   margin-top: 50px;
   background-color: #272d33;
