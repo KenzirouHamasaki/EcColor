@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="back-ground">
+
     <div class="container">
         <div class="product">
             <img src="{{ asset($product->image) }}" class="product-img"/>
@@ -31,6 +31,5 @@
         </div>
         <a href="{{ route('product.index') }}">TOPへ戻る<a>
     </div>
-</div>
 @endsection
 

@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-<div class="back-ground">
     <div class="container">
         <div class="cart__title">
             Shopping Cart
@@ -51,6 +50,5 @@
         </div>
         @endif
     </div>
-</div>
 @endsection
 
